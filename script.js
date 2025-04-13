@@ -24,22 +24,36 @@ window.addEventListener('scroll', function() {
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        
-        if (targetElement) {
-            const navbarHeight = document.querySelector('.navbar').offsetHeight;
-            const targetPosition = targetElement.offsetTop - navbarHeight;
-            
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
             });
+            // Tutup navbar setelah link diklik (untuk tampilan mobile)
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+            if (navbarCollapse.classList.contains('show')) {
+                navbarCollapse.classList.remove('show');
+            }
         }
     });
 });
 
-// Handle mobile menu
-document.querySelector('.navbar-toggler')?.addEventListener('click', function() {
-    document.querySelector('.navbar-collapse').classList.toggle('show');
+// Tutup navbar saat mengklik di luar navbar
+document.addEventListener('click', function(e) {
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    
+    if (!navbarCollapse.contains(e.target) && !navbarToggler.contains(e.target) && navbarCollapse.classList.contains('show')) {
+        navbarCollapse.classList.remove('show');
+    }
+});
+
+// Tutup navbar saat tombol toggle diklik (jika navbar sedang terbuka)
+const navbarToggler = document.querySelector('.navbar-toggler');
+navbarToggler.addEventListener('click', function() {
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    if (navbarCollapse.classList.contains('show')) {
+        navbarCollapse.classList.remove('show');
+    }
 });
