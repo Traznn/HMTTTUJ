@@ -154,23 +154,16 @@ body {
 /* Visi Misi Section */
 .visi-misi-section {
     min-height: 100vh;
-    padding: 80px 0;
+    padding: 80px 20px;
     position: relative;
     background-color: rgba(0, 0, 0, 0.8);
     display: flex;
     align-items: center;
 }
 
-.content-frame {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    border: 2px solid var(--primary-blue);
-    padding: 60px 40px;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    margin: 20px auto;
+.visi-misi-section .container {
     max-width: 1000px;
-    width: 100%;
+    margin: 0 auto;
 }
 
 .visi-misi-section h2 {
@@ -189,19 +182,7 @@ body {
     border-radius: 15px;
     padding: 40px;
     margin-bottom: 40px;
-    border: 1px solid var(--primary-blue);
-    opacity: 0;
-    transform: translateX(-50px);
-    transition: all 0.8s ease;
-}
-
-.vision-card.aos-animate, .mission-card.aos-animate {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.mission-card {
-    transform: translateX(50px);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 }
 
 .section-title {
@@ -245,12 +226,7 @@ body {
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .visi-misi-section {
-        padding: 40px 0;
-    }
-
-    .content-frame {
-        padding: 30px 20px;
-        margin: 10px;
+        padding: 40px 15px;
     }
 
     .visi-misi-section h2 {
