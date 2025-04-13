@@ -39,21 +39,82 @@ body {
     margin-left: auto;
 }
 
-/* Hero Section */
+/* Hero Section dengan Kolase */
 .hero-section {
     height: 100vh;
     width: 100vw;
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-                url('https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?q=80');
-    background-size: cover;
-    background-position: center;
+    position: relative;
     display: flex;
     align-items: center;
-    position: relative;
     overflow: hidden;
 }
 
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+    z-index: 1;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 5px;
+    padding: 5px;
+    filter: grayscale(50%);
+}
+
+.hero-background div {
+    background-size: cover;
+    background-position: center;
+    transition: all 0.3s ease;
+}
+
+.hero-background div:nth-child(1) {
+    background-image: url('https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?q=80');
+}
+
+.hero-background div:nth-child(2) {
+    background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80');
+}
+
+.hero-background div:nth-child(3) {
+    background-image: url('https://images.unsplash.com/photo-1526666923127-b2970f64b422?q=80');
+}
+
+.hero-background div:nth-child(4) {
+    background-image: url('https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?q=80');
+}
+
+.hero-background div:nth-child(5) {
+    background-image: url('https://images.unsplash.com/photo-1488229297570-58520851e868?q=80');
+}
+
+.hero-background div:nth-child(6) {
+    background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80');
+}
+
+.hero-background div:nth-child(7) {
+    background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80');
+}
+
+.hero-background div:nth-child(8) {
+    background-image: url('https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80');
+}
+
 .hero-section .container {
+    position: relative;
+    z-index: 2;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
@@ -160,6 +221,23 @@ body {
     }
     60% {
         transform: translateX(-50%) translateY(-15px);
+    }
+}
+
+/* Animasi hover untuk kolase */
+@media (min-width: 768px) {
+    .hero-background div:hover {
+        transform: scale(1.05);
+        filter: grayscale(0%);
+        z-index: 1;
+    }
+}
+
+/* Responsive adjustments untuk kolase */
+@media (max-width: 768px) {
+    .hero-background {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
     }
 }
 
