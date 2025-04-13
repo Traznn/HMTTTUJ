@@ -48,7 +48,7 @@ body {
     align-items: center;
     overflow: hidden;
     background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
-                url('https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?q=80');
+                url('https://raw.githubusercontent.com/Traznn/HMTTTUJ/main/Foto/Background.jpg');
     background-size: cover;
     background-position: center;
 }
