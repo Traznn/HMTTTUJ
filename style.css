@@ -548,3 +548,115 @@ body {
         height: 200px;
     }
 }
+
+/* Penanggung Jawab Section */
+.penanggung-jawab-section {
+    min-height: 100vh;
+    padding: 120px 20px 80px;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.penanggung-jawab-section h2 {
+    color: var(--text-white);
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.pj-frame {
+    background: rgba(0, 43, 89, 0.9);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    transition: transform 0.3s ease;
+    max-width: 400px;
+}
+
+.pj-frame:hover {
+    transform: translateY(-5px);
+}
+
+.photo-frame {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--primary-blue);
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pj-info {
+    text-align: center;
+}
+
+.pj-info h3 {
+    color: var(--text-white);
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.pj-info .jabatan {
+    color: var(--primary-blue);
+    font-size: 1.1rem;
+    margin-bottom: 0;
+}
+
+.text-content {
+    max-width: 400px;
+}
+
+.section-subtitle {
+    color: var(--primary-blue);
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.description {
+    color: var(--text-white);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Responsive adjustments for penanggung jawab section */
+@media (max-width: 768px) {
+    .penanggung-jawab-section {
+        padding: 80px 15px;
+    }
+
+    .penanggung-jawab-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+    }
+
+    .pj-frame {
+        margin: 0 auto 30px;
+    }
+
+    .photo-frame {
+        width: 150px;
+        height: 150px;
+    }
+
+    .text-content {
+        text-align: center !important;
+        margin: 30px auto;
+    }
+
+    .section-subtitle {
+        font-size: 1.8rem;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+}
