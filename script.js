@@ -1,13 +1,15 @@
 // Initialize AOS with specific settings
 document.addEventListener('DOMContentLoaded', function() {
-    AOS.init({
-        duration: 1000,
-        easing: 'ease-in-out',
-        once: true,
-        mirror: false,
-        offset: 50,
-        delay: 100
-    });
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false,
+            offset: 50,
+            delay: 100
+        });
+    }
 });
 
 // Navbar scroll effect
@@ -20,21 +22,27 @@ window.addEventListener('scroll', function() {
     }
 });
 
-// Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-            // Tutup navbar setelah link diklik (untuk tampilan mobile)
-            const navbarCollapse = document.querySelector('.navbar-collapse');
-            if (navbarCollapse.classList.contains('show')) {
-                navbarCollapse.classList.remove('show');
+// Handle all navbar links
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        
+        // Jika ini adalah anchor link (dimulai dengan #)
+        if (href.startsWith('#')) {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
             }
+        }
+        
+        // Tutup navbar setelah link diklik (untuk tampilan mobile)
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        if (navbarCollapse.classList.contains('show')) {
+            navbarCollapse.classList.remove('show');
         }
     });
 });
@@ -49,11 +57,9 @@ document.addEventListener('click', function(e) {
     }
 });
 
-// Tutup navbar saat tombol toggle diklik (jika navbar sedang terbuka)
+// Toggle navbar
 const navbarToggler = document.querySelector('.navbar-toggler');
 navbarToggler.addEventListener('click', function() {
     const navbarCollapse = document.querySelector('.navbar-collapse');
-    if (navbarCollapse.classList.contains('show')) {
-        navbarCollapse.classList.remove('show');
-    }
+    navbarCollapse.classList.toggle('show');
 });
