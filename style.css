@@ -83,39 +83,39 @@ body {
 }
 
 .hero-background div:nth-child(1) {
-    background-image: url('./images/foto1.jpg');
+    background-image: url('./foto/bg1.jpg');
 }
 
 .hero-background div:nth-child(2) {
-    background-image: url('./images/foto2.jpg');
+    background-image: url('./foto/bg2.jpg');
 }
 
 .hero-background div:nth-child(3) {
-    background-image: url('./images/foto3.jpg');
+    background-image: url('./foto/bg3.jpg');
 }
 
 .hero-background div:nth-child(4) {
-    background-image: url('./images/foto4.jpg');
+    background-image: url('./foto/bg4.jpg');
 }
 
 .hero-background div:nth-child(5) {
-    background-image: url('./images/foto5.jpg');
+    background-image: url('./foto/bg5.jpg');
 }
 
 .hero-background div:nth-child(6) {
-    background-image: url('./images/foto6.jpg');
+    background-image: url('./foto/bg6.jpg');
 }
 
 .hero-background div:nth-child(7) {
-    background-image: url('./images/foto7.jpg');
+    background-image: url('./foto/bg7.jpg');
 }
 
 .hero-background div:nth-child(8) {
-    background-image: url('./images/foto8.jpg');
+    background-image: url('./foto/bg8.jpg');
 }
 
 .hero-background div:nth-child(9) {
-    background-image: url('./images/foto9.jpg');
+    background-image: url('./foto/bg9.jpg');
 }
 
 .hero-section .container {
