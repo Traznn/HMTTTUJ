@@ -87,39 +87,39 @@ body {
 }
 
 .hero-background div:nth-child(1) {
-    background-image: src:('main/Foto/bg1.jpg');
+    background-image: url('/HMTTTUJ/Foto/bg1.jpg');
 }
 
 .hero-background div:nth-child(2) {
-    background-image: url('https://raw.githubusercontent.com/Traznn/HMTTTUJ/main/Foto/bg2.jpg');
+    background-image: url('/HMTTTUJ/Foto/bg2.jpg');
 }
 
 .hero-background div:nth-child(3) {
-    background-image: url('https://raw.githubusercontent.com/Traznn/HMTTTUJ/main/Foto/bg3.jpg');
+    background-image: url('/HMTTTUJ/Foto/bg3.jpg');
 }
 
 .hero-background div:nth-child(4) {
-    background-image: url('https://raw.githubusercontent.com/Traznn/HMTTTUJ/main/Foto/bg4.jpg');
+    background-image: url('/HMTTTUJ/Foto/bg4.jpg');
 }
 
 .hero-background div:nth-child(5) {
-    background-image: url('https://raw.githubusercontent.com/Traznn/HMTTTUJ/main/Foto/bg5.jpg');
+    background-image: url('/HMTTTUJ/Foto/bg5.jpg');
 }
 
 .hero-background div:nth-child(6) {
-    background-image: url('https://raw.githubusercontent.com/Traznn/HMTTTUJ/main/Foto/bg6.jpg');
+    background-image: url('/HMTTTUJ/Foto/bg6.jpg');
 }
 
 .hero-background div:nth-child(7) {
-    background-image: url('https://raw.githubusercontent.com/Traznn/HMTTTUJ/main/Foto/bg7.jpg');
+    background-image: url('/HMTTTUJ/Foto/bg7.jpg');
 }
 
 .hero-background div:nth-child(8) {
-    background-image: url('https://raw.githubusercontent.com/Traznn/HMTTTUJ/main/Foto/bg8.jpg');
+    background-image: url('/HMTTTUJ/Foto/bg8.jpg');
 }
 
 .hero-background div:nth-child(9) {
-    background-image: url('https://raw.githubusercontent.com/Traznn/HMTTTUJ/main/Foto/bg9.jpg');
+    background-image: url('/HMTTTUJ/Foto/bg9.jpg');
 }
 
 /* Style debugging sementara */
