@@ -94,105 +94,15 @@ body {
     border-radius: 30px;
     transition: all 0.3s ease;
     white-space: nowrap;
+    text-decoration: none;
 }
 
 .btn-custom:hover {
     background-color: var(--secondary-blue);
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
-}
-
-/* Visi Misi Section */
-.visi-misi-section {
-    background-color: rgba(26, 26, 26, 0.85);
-    padding: 100px 0;
-    min-height: 100vh;
-    width: 100vw;
-    overflow: hidden;
-    backdrop-filter: blur(5px);
-    position: relative;
-}
-
-.bubble {
-    position: absolute;
-    border-radius: 20px;
-    background: rgba(0, 43, 89, 0.8);
-    backdrop-filter: blur(10px);
-    z-index: 1;
-}
-
-.bubble-1 {
-    width: 300px;
-    height: 300px;
-    top: 50px;
-    left: -150px;
-    transform: rotate(-15deg);
-}
-
-.bubble-2 {
-    width: 400px;
-    height: 400px;
-    bottom: 50px;
-    right: -200px;
-    transform: rotate(20deg);
-}
-
-.card {
-    background-color: rgba(0, 43, 89, 0.9);
-    border: 2px solid var(--primary-blue);
-    box-shadow: 0 4px 20px rgba(0, 123, 255, 0.2);
-    transition: all 0.3s ease;
-    width: 100%;
-    margin-bottom: 20px;
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    position: relative;
-    z-index: 2;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 30px rgba(0, 123, 255, 0.3);
-    background-color: rgba(0, 43, 89, 1);
-}
-
-.card-body {
-    padding: 2rem;
-}
-
-.card-title {
     color: var(--text-white);
-    font-weight: 700;
-    font-size: clamp(1.5rem, 2.5vw, 2rem);
-    margin-bottom: 1.5rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.card-text {
-    color: var(--text-white);
-    font-size: clamp(1rem, 1.5vw, 1.1rem);
-    line-height: 1.6;
-}
-
-.card-text ul {
-    padding-left: 20px;
-    list-style-type: none;
-}
-
-.card-text ul li {
-    margin-bottom: 10px;
-    position: relative;
-    padding-left: 25px;
-}
-
-.card-text ul li:before {
-    content: "•";
-    color: var(--primary-blue);
-    font-size: 1.5em;
-    position: absolute;
-    left: 0;
-    top: -5px;
+    text-decoration: none;
 }
 
 /* Scroll Down Animation */
@@ -224,22 +134,8 @@ body {
         height: 100vh;
         padding: 20px 0;
     }
-    
-    .visi-misi-section {
-        padding: 50px 0;
-    }
 
     .container {
-        padding-right: 15px;
-        padding-left: 15px;
-    }
-
-    .row {
-        margin-right: -15px;
-        margin-left: -15px;
-    }
-
-    .col-md-6 {
         padding-right: 15px;
         padding-left: 15px;
     }
@@ -253,4 +149,93 @@ body {
 
 [data-aos].aos-animate {
     opacity: 1;
+}
+
+/* Visi Misi Section */
+.visi-misi-section {
+    min-height: 100vh;
+    padding: 100px 0;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.content-frame {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 2px solid var(--primary-blue);
+    padding: 40px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    margin: 20px;
+}
+
+.section-title {
+    color: var(--primary-blue);
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.vision-card, .mission-card {
+    background: rgba(0, 43, 89, 0.8);
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.vision-card:hover, .mission-card:hover {
+    transform: translateY(-5px);
+}
+
+.vision-text {
+    color: var(--text-white);
+    font-size: 1.2rem;
+    line-height: 1.8;
+    text-align: center;
+    margin: 0;
+}
+
+.mission-list {
+    color: var(--text-white);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    padding-left: 20px;
+}
+
+.mission-list li {
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.mission-list li::before {
+    content: "";
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background-color: var(--primary-blue);
+    border-radius: 50%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .content-frame {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .vision-text, .mission-list {
+        font-size: 1rem;
+    }
 } 
