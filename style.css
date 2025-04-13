@@ -39,7 +39,7 @@ body {
     margin-left: auto;
 }
 
-/* Hero Section dengan Kolase */
+/* Hero Section */
 .hero-section {
     height: 100vh;
     width: 100vw;
@@ -47,85 +47,10 @@ body {
     display: flex;
     align-items: center;
     overflow: hidden;
-}
-
-.hero-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75));
-    z-index: 1;
-}
-
-.hero-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 4px;
-    padding: 4px;
-    filter: grayscale(60%);
-    z-index: 0;
-}
-
-.hero-background div {
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+                url('https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?q=80');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-    transition: all 0.5s ease;
-    position: relative;
-    overflow: hidden;
-    min-height: calc(100vh / 3 - 8px);
-    border: 1px solid rgba(255,255,255,0.1);
-}
-
-.hero-background div:nth-child(1) {
-    background-image: url('/HMTTTUJ/Foto/bg1.jpg');
-}
-
-.hero-background div:nth-child(2) {
-    background-image: url('/HMTTTUJ/Foto/bg2.jpg');
-}
-
-.hero-background div:nth-child(3) {
-    background-image: url('/HMTTTUJ/Foto/bg3.jpg');
-}
-
-.hero-background div:nth-child(4) {
-    background-image: url('/HMTTTUJ/Foto/bg4.jpg');
-}
-
-.hero-background div:nth-child(5) {
-    background-image: url('/HMTTTUJ/Foto/bg5.jpg');
-}
-
-.hero-background div:nth-child(6) {
-    background-image: url('/HMTTTUJ/Foto/bg6.jpg');
-}
-
-.hero-background div:nth-child(7) {
-    background-image: url('/HMTTTUJ/Foto/bg7.jpg');
-}
-
-.hero-background div:nth-child(8) {
-    background-image: url('/HMTTTUJ/Foto/bg8.jpg');
-}
-
-.hero-background div:nth-child(9) {
-    background-image: url('/HMTTTUJ/Foto/bg9.jpg');
-}
-
-/* Style debugging sementara */
-.hero-background div:empty {
-    background-color: rgba(255,255,255,0.1);
-    min-height: 200px;
 }
 
 .hero-section .container {
@@ -237,31 +162,6 @@ body {
     }
     60% {
         transform: translateX(-50%) translateY(-15px);
-    }
-}
-
-/* Animasi hover untuk kolase */
-@media (min-width: 768px) {
-    .hero-background div:hover {
-        transform: scale(1.1);
-        filter: grayscale(0%);
-        z-index: 1;
-    }
-
-    .hero-background div:hover::after {
-        opacity: 0;
-    }
-}
-
-/* Responsive adjustments untuk kolase */
-@media (max-width: 768px) {
-    .hero-background {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(5, 1fr);
-    }
-    
-    .hero-background div:nth-child(9) {
-        grid-column: span 2;
     }
 }
 
