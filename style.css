@@ -1,0 +1,127 @@
+:root {
+    --primary-black: #0a0a0a;
+    --secondary-black: #1a1a1a;
+    --primary-blue: #007bff;
+    --secondary-blue: #0056b3;
+    --text-white: #ffffff;
+    --text-gray: #b3b3b3;
+}
+
+body {
+    background-color: var(--primary-black);
+    color: var(--text-white);
+    font-family: 'Arial', sans-serif;
+}
+
+/* Hero Section */
+.hero-section {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+                url('https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.hero-section h1 {
+    color: var(--text-white);
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-section .lead {
+    color: var(--text-gray);
+}
+
+.btn-custom {
+    background-color: var(--primary-blue);
+    color: var(--text-white);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.btn-custom:hover {
+    background-color: var(--secondary-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+/* Visi Misi Section */
+.visi-misi-section {
+    background-color: var(--secondary-black);
+    padding: 100px 0;
+    min-height: 100vh;
+}
+
+.visi-misi-section h2 {
+    color: var(--primary-blue);
+    margin-bottom: 50px;
+}
+
+.card {
+    background-color: var(--primary-black);
+    border: 1px solid var(--primary-blue);
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.2);
+}
+
+.card-title {
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+.card-text {
+    color: var(--text-gray);
+}
+
+/* Scroll Down Animation */
+.scroll-down {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--primary-blue);
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    
+    .visi-misi-section {
+        padding: 50px 0;
+    }
+}
+
+/* AOS Animation Customization */
+[data-aos] {
+    opacity: 0;
+    transition-duration: 1000ms;
+}
+
+[data-aos].aos-animate {
+    opacity: 1;
+} 
