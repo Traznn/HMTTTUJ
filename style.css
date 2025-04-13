@@ -87,7 +87,7 @@ body {
 }
 
 .hero-background div:nth-child(1) {
-    background-image: url('https://raw.githubusercontent.com/Traznn/HMTTTUJ/main/Foto/bg1.jpg');
+    background-image: src:('main/Foto/bg1.jpg');
 }
 
 .hero-background div:nth-child(2) {
