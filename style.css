@@ -70,6 +70,15 @@ body {
     width: 100%;
 }
 
+.hero-section h2 {
+    color: var(--primary-blue);
+    font-weight: 600;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    width: 100%;
+    letter-spacing: 2px;
+}
+
 .hero-section .lead {
     color: var(--text-gray);
     font-size: clamp(1rem, 2vw, 1.25rem);
@@ -101,48 +110,89 @@ body {
     width: 100vw;
     overflow: hidden;
     backdrop-filter: blur(5px);
+    position: relative;
 }
 
-.visi-misi-section .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+.bubble {
+    position: absolute;
+    border-radius: 20px;
+    background: rgba(0, 43, 89, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 1;
 }
 
-.visi-misi-section h2 {
-    color: var(--primary-blue);
-    margin-bottom: 50px;
-    font-size: clamp(1.5rem, 3vw, 2.5rem);
+.bubble-1 {
+    width: 300px;
+    height: 300px;
+    top: 50px;
+    left: -150px;
+    transform: rotate(-15deg);
+}
+
+.bubble-2 {
+    width: 400px;
+    height: 400px;
+    bottom: 50px;
+    right: -200px;
+    transform: rotate(20deg);
 }
 
 .card {
-    background-color: rgba(10, 10, 10, 0.9);
-    border: 1px solid var(--primary-blue);
-    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.1);
+    background-color: rgba(0, 43, 89, 0.9);
+    border: 2px solid var(--primary-blue);
+    box-shadow: 0 4px 20px rgba(0, 123, 255, 0.2);
     transition: all 0.3s ease;
     width: 100%;
     margin-bottom: 20px;
     backdrop-filter: blur(10px);
+    border-radius: 15px;
+    position: relative;
+    z-index: 2;
 }
 
 .card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.2);
+    box-shadow: 0 8px 30px rgba(0, 123, 255, 0.3);
+    background-color: rgba(0, 43, 89, 1);
+}
+
+.card-body {
+    padding: 2rem;
 }
 
 .card-title {
-    color: var(--primary-blue);
-    font-weight: 600;
-    font-size: clamp(1.25rem, 2vw, 1.75rem);
+    color: var(--text-white);
+    font-weight: 700;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .card-text {
-    color: var(--text-gray);
-    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    color: var(--text-white);
+    font-size: clamp(1rem, 1.5vw, 1.1rem);
+    line-height: 1.6;
 }
 
 .card-text ul {
     padding-left: 20px;
+    list-style-type: none;
+}
+
+.card-text ul li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.card-text ul li:before {
+    content: "•";
+    color: var(--primary-blue);
+    font-size: 1.5em;
+    position: absolute;
+    left: 0;
+    top: -5px;
 }
 
 /* Scroll Down Animation */
