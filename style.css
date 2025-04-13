@@ -144,11 +144,42 @@ body {
 /* AOS Animation Customization */
 [data-aos] {
     opacity: 0;
-    transition-duration: 1000ms;
+    transition-duration: 800ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform, opacity;
 }
 
 [data-aos].aos-animate {
     opacity: 1;
+}
+
+[data-aos="zoom-in"] {
+    transform: scale(0.9);
+}
+
+[data-aos="zoom-in"].aos-animate {
+    transform: scale(1);
+}
+
+[data-aos="fade-right"] {
+    transform: translateX(-50px);
+}
+
+[data-aos="fade-left"] {
+    transform: translateX(50px);
+}
+
+[data-aos="fade-right"].aos-animate,
+[data-aos="fade-left"].aos-animate {
+    transform: translateX(0);
+}
+
+[data-aos="fade-up"] {
+    transform: translateY(30px);
+}
+
+[data-aos="fade-up"].aos-animate {
+    transform: translateY(0);
 }
 
 /* Visi Misi Section */
@@ -175,7 +206,6 @@ body {
     text-transform: uppercase;
     letter-spacing: 3px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    opacity: 1 !important;
 }
 
 .vision-card, .mission-card {
@@ -184,7 +214,13 @@ body {
     padding: 40px;
     margin-bottom: 40px;
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    opacity: 1 !important;
+    transition: all 0.5s ease;
+    will-change: transform;
+}
+
+.vision-card:hover, .mission-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.45);
 }
 
 .section-title {
@@ -196,7 +232,6 @@ body {
     text-transform: uppercase;
     letter-spacing: 2px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-    opacity: 1 !important;
 }
 
 .vision-text {
@@ -206,7 +241,6 @@ body {
     text-align: center;
     margin: 0;
     padding: 0 20px;
-    opacity: 1 !important;
 }
 
 .mission-list {
@@ -216,16 +250,12 @@ body {
     padding-left: 30px;
     list-style-type: decimal;
     margin: 0;
-    opacity: 1 !important;
 }
 
 .mission-list li {
     margin-bottom: 25px;
     padding-left: 10px;
-}
-
-.mission-list li:last-child {
-    margin-bottom: 0;
+    transition: all 0.3s ease;
 }
 
 /* Responsive adjustments */
