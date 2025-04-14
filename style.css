@@ -52,6 +52,7 @@ body {
     display: flex;
     align-items: center;
     overflow: hidden;
+    padding-top: 80px;
 }
 
 .hero-section .container {
@@ -132,7 +133,7 @@ body {
 @media (max-width: 768px) {
     .hero-section {
         height: 100vh;
-        padding: 20px 0;
+        padding-top: 100px;
     }
 
     .container {
@@ -188,6 +189,24 @@ body {
     padding: 120px 20px 80px;
     position: relative;
     background-color: rgba(0, 0, 0, 0.8);
+}
+
+.visi-misi-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(to bottom, 
+        rgba(0, 0, 0, 0.8) 0%,
+        rgba(0, 16, 33, 0.9) 40%,
+        rgba(0, 24, 49, 0.93) 60%,
+        rgba(0, 32, 66, 0.95) 80%,
+        rgba(0, 32, 66, 0.97) 100%
+    );
+    pointer-events: none;
+    z-index: 1;
 }
 
 .visi-misi-section .container {
@@ -291,6 +310,7 @@ body {
     background-color: rgba(0, 0, 0, 0.9);
     padding: 15px 0;
     transition: all 0.3s ease;
+    z-index: 1000;
 }
 
 .navbar.navbar-scrolled {
@@ -554,7 +574,7 @@ body {
     min-height: 100vh;
     padding: 120px 20px 80px;
     position: relative;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 32, 66, 0.97);
 }
 
 .penanggung-jawab-section h2 {
@@ -568,16 +588,17 @@ body {
 }
 
 .pj-frame {
-    background: rgba(0, 43, 89, 0.9);
+    background: rgba(0, 0, 0, 0.8);
     border-radius: 15px;
     padding: 30px;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease;
     width: 260px;
 }
 
 .pj-frame:hover {
     transform: translateY(-5px);
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.7);
 }
 
 .photo-frame {
@@ -680,5 +701,181 @@ body {
 
     .offset-md-6 {
         margin-left: 0;
+    }
+}
+.gallery-section {
+    min-height: 100vh;
+    padding: 120px 20px 80px;
+    position: relative;
+    background-color: rgba(0, 24, 49, 0.95);
+}
+
+.gallery-section h2 {
+    color: var(--text-white);
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 60px;
+}
+
+#eventCarousel {
+    margin-bottom: 50px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    border-radius: 15px;
+    background: rgba(0, 43, 89, 0.9);
+}
+
+.event-slide {
+    display: flex;
+    flex-direction: column;
+}
+
+.event-image {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.event-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.event-description {
+    padding: 30px;
+    color: var(--text-white);
+}
+
+.event-description h3 {
+    color: var(--primary-blue);
+    font-size: 2rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.event-date {
+    color: var(--text-gray);
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.event-date i {
+    color: var(--primary-blue);
+    margin-right: 8px;
+}
+
+.event-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 10%;
+    opacity: 0.8;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 50%;
+    background-size: 50%;
+    background-position: center;
+}
+
+.carousel-indicators {
+    margin-bottom: -1rem;
+}
+
+.carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 5px;
+    background-color: var(--primary-blue);
+    opacity: 0.5;
+}
+
+.carousel-indicators button.active {
+    opacity: 1;
+}
+
+/* Hover effects */
+.event-slide:hover .event-image img {
+    transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (min-width: 992px) {
+    .event-slide {
+        flex-direction: row;
+        align-items: stretch;
+    }
+    
+    .event-image {
+        width: 50%;
+        height: auto;
+    }
+    
+    .event-description {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 991px) {
+    .event-image {
+        height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-section {
+        padding: 80px 15px;
+    }
+    
+    .gallery-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+    }
+    
+    .event-image {
+        height: 250px;
+    }
+    
+    .event-description {
+        padding: 20px;
+    }
+    
+    .event-description h3 {
+        font-size: 1.5rem;
+    }
+    
+    .event-date {
+        font-size: 1rem;
+    }
+    
+    .event-text {
+        font-size: 1rem;
+    }
+    
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        width: 30px;
+        height: 30px;
     }
 }
