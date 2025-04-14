@@ -1,4 +1,22 @@
-// Initialize AOS with specific settings
+// Initialize Bootstrap carousel explicitly
+var eventCarousel = document.getElementById('eventCarousel');
+if (eventCarousel) {
+    new bootstrap.Carousel(eventCarousel, {
+        interval: 5000,
+        wrap: true,
+        touch: true
+    });
+}// Initialize Bootstrap carousel explicitly
+var eventCarousel = document.getElementById('eventCarousel');
+if (eventCarousel) {
+    new bootstrap.Carousel(eventCarousel, {
+        interval: 5000,
+        wrap: true,
+        touch: true
+    });
+}<li class="nav-item">
+    <a class="nav-link" href="#galeri">Galeri Kegiatan</a>
+</li>// Initialize AOS with specific settings
 document.addEventListener('DOMContentLoaded', function() {
     if (typeof AOS !== 'undefined') {
         AOS.init({
@@ -8,6 +26,16 @@ document.addEventListener('DOMContentLoaded', function() {
             mirror: false,
             offset: 50,
             delay: 100
+        });
+    }
+    
+    // Initialize Bootstrap carousel explicitly
+    var eventCarousel = document.getElementById('eventCarousel');
+    if (eventCarousel) {
+        new bootstrap.Carousel(eventCarousel, {
+            interval: 5000,
+            wrap: true,
+            touch: true
         });
     }
 });
