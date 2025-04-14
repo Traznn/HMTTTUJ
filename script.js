@@ -1,23 +1,5 @@
-// Initialize Bootstrap carousel explicitly
-var eventCarousel = document.getElementById('eventCarousel');
-if (eventCarousel) {
-    new bootstrap.Carousel(eventCarousel, {
-        interval: 5000,
-        wrap: true,
-        touch: true
-    });
-}// Initialize Bootstrap carousel explicitly
-var eventCarousel = document.getElementById('eventCarousel');
-if (eventCarousel) {
-    new bootstrap.Carousel(eventCarousel, {
-        interval: 5000,
-        wrap: true,
-        touch: true
-    });
-}<li class="nav-item">
-    <a class="nav-link" href="#galeri">Galeri Kegiatan</a>
-</li>// Initialize AOS with specific settings
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
+    // Initialize AOS animation
     if (typeof AOS !== 'undefined') {
         AOS.init({
             duration: 1000,
@@ -25,23 +7,23 @@ document.addEventListener('DOMContentLoaded', function() {
             once: true,
             mirror: false,
             offset: 50,
-            delay: 100
+            delay: 100,
         });
     }
-    
-    // Initialize Bootstrap carousel explicitly
+
+    // Initialize Bootstrap carousel
     var eventCarousel = document.getElementById('eventCarousel');
     if (eventCarousel) {
         new bootstrap.Carousel(eventCarousel, {
             interval: 5000,
             wrap: true,
-            touch: true
+            touch: true,
         });
     }
 });
 
 // Navbar scroll effect
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
     const navbar = document.querySelector('.navbar');
     if (window.scrollY > 50) {
         navbar.classList.add('navbar-scrolled');
@@ -50,24 +32,22 @@ window.addEventListener('scroll', function() {
     }
 });
 
-// Handle all navbar links
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', function(e) {
+// Smooth scrolling for navbar links
+document.querySelectorAll('.nav-link').forEach((link) => {
+    link.addEventListener('click', function (e) {
         const href = this.getAttribute('href');
-        
-        // Jika ini adalah anchor link (dimulai dengan #)
         if (href.startsWith('#')) {
             e.preventDefault();
             const target = document.querySelector(href);
             if (target) {
                 target.scrollIntoView({
                     behavior: 'smooth',
-                    block: 'start'
+                    block: 'start',
                 });
             }
         }
-        
-        // Tutup navbar setelah link diklik (untuk tampilan mobile)
+
+        // Close navbar on mobile after link click
         const navbarCollapse = document.querySelector('.navbar-collapse');
         if (navbarCollapse.classList.contains('show')) {
             navbarCollapse.classList.remove('show');
@@ -75,19 +55,23 @@ document.querySelectorAll('.nav-link').forEach(link => {
     });
 });
 
-// Tutup navbar saat mengklik di luar navbar
-document.addEventListener('click', function(e) {
+// Close navbar when clicking outside
+document.addEventListener('click', function (e) {
     const navbarCollapse = document.querySelector('.navbar-collapse');
     const navbarToggler = document.querySelector('.navbar-toggler');
-    
-    if (!navbarCollapse.contains(e.target) && !navbarToggler.contains(e.target) && navbarCollapse.classList.contains('show')) {
+
+    if (
+        !navbarCollapse.contains(e.target) &&
+        !navbarToggler.contains(e.target) &&
+        navbarCollapse.classList.contains('show')
+    ) {
         navbarCollapse.classList.remove('show');
     }
 });
 
-// Toggle navbar
+// Toggle navbar visibility
 const navbarToggler = document.querySelector('.navbar-toggler');
-navbarToggler.addEventListener('click', function() {
+navbarToggler.addEventListener('click', function () {
     const navbarCollapse = document.querySelector('.navbar-collapse');
     navbarCollapse.classList.toggle('show');
 });
